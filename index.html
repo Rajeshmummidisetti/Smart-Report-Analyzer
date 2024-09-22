@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Test Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #555;
+            margin-bottom: 30px;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            display: inline-block;
+            margin: auto;
+        }
+        input[type="file"], input[type="email"] {
+            margin: 10px 0;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .recommendations {
+            margin-top: 30px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blood Test Analysis</h1>
+    <h2>Wingify Task</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <h3>Upload Your Report</h3>
+        <input type="file" name="file" required>
+        <h3>Enter Your Email</h3>
+        <input type="email" name="email" placeholder="Your email" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if recommendations %}
+        <div class="recommendations">Recommendations sent to your email!</div>
+    {% endif %}
+</body>
+</html>
